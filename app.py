@@ -9,6 +9,10 @@ CORS(app)
 
 model = joblib.load('model.pkl')
 
+@app.route('/', methods=['GET'])
+def home():
+    return "Chicken Profit Prediction API! Is Running Successfully!"
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
